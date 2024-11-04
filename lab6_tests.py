@@ -64,16 +64,53 @@ class TestCases(unittest.TestCase):
 
 
     # Part 1
-
-
+    def test_selection_sort_books1(self):
+        book1 = data.Book(["JK Rowling","Jake Notan"],"Happy Times")
+        book2 = data.Book(["JK Rowling", "Jake Notan"], "Percy Jackson")
+        book3 = data.Book(["JK Rowling", "Jake Notan"], "Happy Guy")
+        book4 = data.Book(["JK Rowling", "Jake Notan"], "Always Good")
+        list = [book1, book2, book3, book4]
+        sorted_list = [book4,book3,book1,book2]
+        self.assertEqual(list, list)
+        lab6.selection_sort_books(list)
+        self.assertEqual(list, sorted_list)
+    def test_selection_sort_books_empty(self):
+        book1 = data.Book(["JK Rowling","Jake Notan"],"Happy Times")
+        book2 = data.Book(["JK Rowling", "Jake Notan"], "Percy Jackson")
+        book3 = data.Book(["JK Rowling", "Jake Notan"], "Happy Guy")
+        book4 = data.Book(["JK Rowling", "Jake Notan"], "Always Good")
+        list = []
+        sorted_list = []
+        self.assertEqual(list, list)
+        lab6.selection_sort_books(list)
+        self.assertEqual(list, sorted_list)
     # Part 2
-
-
+    def test_swap_case(self):
+        string = "HeLLo"
+        result = "hEllO"
+        self.assertEqual(lab6.swap_case(string), result)
+    def test_swap_case_none(self):
+        string = ""
+        result = ""
+        self.assertEqual(lab6.swap_case(string), result)
     # Part 3
-
-
+    def test_str_translate(self):
+        string = "Mississippi"
+        result = "Missississi"
+        self.assertEqual(lab6.str_translate(string,"p","s"), result)
+    def test_str_translate_2(self):
+        string = "abcdcba"
+        result = "xbcdcbx"
+        self.assertEqual(lab6.str_translate(string,"a","x"), result)
     # Part 4
-
+    def test_histogram1(self):
+        string = "hello wow hi hello hi and one and on and"
+        dictionary = {"hello":2,"wow":1,"hi":2,"and":3,"one":1,"on":1}
+        self.assertEqual(lab6.histogram(string), dictionary)
+    def test_histogram2(self):
+        string = "Today we went to the park and we played tag"
+        dictionary = {"Today":1, "we":2,"went":1,"to":1,"the":1,"park":1,"and":1,"played":1,"tag":1}
+        self.assertEqual(lab6.histogram(string), dictionary)
 
 
 
